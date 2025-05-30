@@ -18,3 +18,6 @@ Menyediakan informasi dan edukasi seputar pasar modal, keuangan syariah, dan keg
 
 ## 📬 Kontak
 - Instagram: [@kspmuinbanten](https://instagram.com/kspmuinbanten)
+<p align="center">
+  <img src="LOGO 2 BARU KSPM.png%202.png" alt="KSPM Logo" width="150"/>
+</p>
