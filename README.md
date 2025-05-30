@@ -21,3 +21,8 @@ Menyediakan informasi dan edukasi seputar pasar modal, keuangan syariah, dan keg
 <p align="center">
   <img src="LOGO BARU KSPM png 2.png" alt="KSPM Logo" width="150"/>
 </p>
+
+## 👥 Tim Pengembang
+- Dino Baggio Listiyanto — Developer & Admin
+- Divisi Media & Publikasi KSPM FEBI UIN SMH Banten
+
