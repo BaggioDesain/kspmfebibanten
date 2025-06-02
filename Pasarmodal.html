@@ -112,6 +112,31 @@
     <div class="disclaimer">
       Tulisan dari Berita Update tidak mewakili pandangan dari KSPMweb.
     </div>
+    <!-- Script Ambil Data dari Google Sheets via opensheet.elk.sh -->
+<script>
+  fetch('https://opensheet.elk.sh/1N3PNuag8e5YcLlb151nxlqR4267jKyFpsxQUiuxBrvI//Form+Responses+1')
+    .then(res => res.json())
+    .then(data => {
+      let html = '<ul>';
+      data.forEach(item => {
+        html += `
+          <li>
+            <strong>${item['Judul Berita']}</strong><br>
+            <small>${item['Tanggal Publikasi']}</small><br>
+            <p>${item['Isi Ringkas Berita']}</p>
+            ${item['Link Artikel'] ? `<a href="${item['Link Artikel']}" target="_blank">Baca Selengkapnya</a>` : ''}
+            <hr>
+          </li>`;
+      });
+      html += '</ul>';
+      document.getElementById('berita-container').innerHTML = html;
+    })
+    .catch(error => {
+      console.error('Gagal mengambil data:', error);
+      document.getElementById('berita-container').textContent = 'Gagal memuat data.';
+    });
+</script>
+
      <!-- Tambahkan di dalam <div class="container"> sebelum tag </div> terakhir -->
     <div class="bottom-section" style="margin-top: 3rem; text-align: center;">
       <img src="pasar modal.jpeg" alt="Ilustrasi Pasar Modal" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-bottom: 1rem;">
