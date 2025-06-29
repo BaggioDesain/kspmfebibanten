@@ -14,29 +14,44 @@
   <meta property="og:image" content="https://www.kspmweb.info/LOGO%20BARU%20KSPM%20png%202.png">
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #f9f9f9;
-    }
-    header {
-      background: #0033a0;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-    }
-    .logo-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo-title img {
-      width: 40px; height: 40px; border-radius: 50%;
-    }
+/* === RESET === */
+* {
+  box-sizing: border-box; /* Hitung padding + border di dalam width */
+  margin: 0; 
+  padding: 0;
+}
+
+/* === BODY === */
+body {
+  font-family: Arial, sans-serif; /* Font utama */
+  background: #f9f9f9;            /* Background abu terang */
+  line-height: 1.6;                /* Tinggi baris nyaman */
+  padding-top: 80px;               /* Ruang untuk header fixed */
+}
+  /* === HEADER === */
+header {
+  position: fixed;                 /* Tetap di atas */
+  top: 0; left: 0; right: 0;
+  z-index: 999;                    /* Di atas elemen lain */
+  background: #0033a0;             /* Biru tua */
+  color: #fff;                     /* Teks putih */
+  display: flex;                   /* Flexbox: logo + nav */
+  justify-content: space-between;  /* Logo kiri, nav kanan */
+  align-items: center;
+  padding: 1rem 2rem;              /* Spasi dalam header */
+}
+/* === LOGO-TITLE (Area Logo + Teks) === */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;                       /* Jarak logo & teks */
+}
+
+.logo-title img {
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%;              /* Logo bulat */
+}
     nav {
       display: flex;
       gap: 1rem;
@@ -113,53 +128,69 @@
       .menu-toggle { display: block; }
     }
 
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      background: white;
-      padding: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ /* === CONTAINER === */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;               /* Tengah */
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+   /* === BREADCRUMB === */
+.breadcrumb {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 1rem;
+}
+/* === LABEL === */
+.label {
+  background: #fdd;                /* Merah muda */
+  color: #a00;                     /* Merah tua */
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+/* === JUDUL === */
+h1 {
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+  animation: fadeIn 1s ease;       /* Muncul naik halus */
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
     }
-    .breadcrumb {
-      font-size: 14px;
-      color: #888;
-      margin-bottom: 1rem;
-    }
-    .label {
-      background: #fdd;
-      color: #a00;
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 13px;
-      margin-bottom: 0.5rem;
-    }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 0.5rem;
-    }
-    .meta {
-      font-size: 13px;
-      color: #666;
-      margin-bottom: 1rem;
-    }
-    .social {
-      display: flex;
-      gap: 10px;
-      font-size: 20px;
-      margin-top: 1rem;
-    }
-    .disclaimer {
-      background: #eef1f5;
-      padding: 1rem;
-      font-size: 14px;
-      margin-top: 2rem;
-      border-left: 4px solid #ccc;
-    }
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-    }
+/* === META === */
+.meta {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 1rem;
+}
+/* === SOCIAL === */
+.social {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  margin-top: 1rem;
+}
+/* === DISCLAIMER === */
+.disclaimer {
+  background: #eef1f5;
+  padding: 1rem;
+  font-size: 14px;
+  margin-top: 2rem;
+  border-left: 4px solid #ccc;
+  animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
   </style>
 </head>
 <body>
