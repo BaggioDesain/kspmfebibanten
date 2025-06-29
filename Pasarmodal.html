@@ -13,78 +13,187 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://www.kspmweb.info/LOGO BARU KSPM png 2.png"> <!-- opsional -->
 <meta property="og:logo" content="https://www.kspmweb.info/LOGO BARU KSPM png 2.png">
-  
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-    }
-    header {
-      background: #0033a0;
-      color: white;
-      padding: 1rem 2rem;
+ <style>
+/* === RESET === */
+* {
+  box-sizing: border-box; /* Hitung padding + border di dalam width */
+  margin: 0; 
+  padding: 0;
+}
+
+/* === BODY === */
+body {
+  font-family: Arial, sans-serif; /* Font utama */
+  background: #f9f9f9;            /* Background abu terang */
+  line-height: 1.6;                /* Tinggi baris nyaman */
+  padding-top: 80px;               /* Ruang untuk header fixed */
+}
+  /* === HEADER === */
+header {
+  position: fixed;                 /* Tetap di atas */
+  top: 0; left: 0; right: 0;
+  z-index: 999;                    /* Di atas elemen lain */
+  background: #0033a0;             /* Biru tua */
+  color: #fff;                     /* Teks putih */
+  display: flex;                   /* Flexbox: logo + nav */
+  justify-content: space-between;  /* Logo kiri, nav kanan */
+  align-items: center;
+  padding: 1rem 2rem;              /* Spasi dalam header */
+}
+/* === LOGO-TITLE (Area Logo + Teks) === */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;                       /* Jarak logo & teks */
+}
+
+.logo-title img {
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%;              /* Logo bulat */
+}
+    nav {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      gap: 1rem;
     }
     nav a {
       color: white;
-      margin: 0 0.5rem;
       text-decoration: none;
       font-size: 14px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      background: white;
-      padding: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .breadcrumb {
-      font-size: 14px;
-      color: #888;
-      margin-bottom: 1rem;
-    }
-    .label {
-      display: inline-block;
-      background: #fdd;
-      color: #a00;
-      padding: 4px 8px;
-      font-size: 13px;
-      margin-bottom: 0.5rem;
+      position: relative;
+      overflow: hidden;
+      padding: 6px 12px;
       border-radius: 4px;
+      transition: all 0.3s ease;
     }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 0.5rem;
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -75%;
+      width: 50%; height: 100%;
+      background: rgba(255,255,255,0.3);
+      transform: skewX(-20deg);
     }
-    .meta {
-      font-size: 13px;
-      color: #666;
-      margin-bottom: 1rem;
+    nav a:hover::before {
+      animation: shine 0.8s forwards;
     }
-    .social {
-      display: flex;
-      gap: 10px;
-      font-size: 20px;
-      margin-top: 1rem;
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
     }
-    .disclaimer {
-      background: #eef1f5;
-      padding: 1rem;
-      font-size: 14px;
-      margin-top: 2rem;
-      border-left: 4px solid #ccc;
+
+    .btn-nav {
+      background: #fff;
+      color: #0033a0;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 6px 16px;
+      border: 2px solid #0033a0;
+      text-shadow: 0 0 2px rgba(0,0,0,0.2);
     }
-  </style>
-</head>
+    .btn-nav:hover {
+      background: #0033a0;
+      color: #fff;
+    }
+    .btn-nav:active {
+      background: #002060;
+      color: #fff;
+    }
+
+    @keyframes shine {
+      from { left: -75%; }
+      to { left: 200%; }
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        background: #002070;
+        position: absolute;
+        top: 70px; right: 20px;
+        border-radius: 5px;
+        padding: 1rem;
+        display: none;
+      }
+      nav.show { display: flex; }
+      nav a { margin: 8px 0; }
+      .menu-toggle { display: block; }
+    }
+
+ /* === CONTAINER === */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;               /* Tengah */
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+   /* === BREADCRUMB === */
+.breadcrumb {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 1rem;
+}
+/* === LABEL === */
+.label {
+  background: #fdd;                /* Merah muda */
+  color: #a00;                     /* Merah tua */
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+/* === JUDUL === */
+h1 {
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+  animation: fadeIn 1s ease;       /* Muncul naik halus */
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+    }
+/* === META === */
+.meta {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 1rem;
+}
+/* === SOCIAL === */
+.social {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  margin-top: 1rem;
+}
+/* === DISCLAIMER === */
+.disclaimer {
+  background: #eef1f5;
+  padding: 1rem;
+  font-size: 14px;
+  margin-top: 2rem;
+  border-left: 4px solid #ccc;
+  animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+footer {
+      margin: 3rem 0; text-align: center;
+    }
+  </style></head>
 <body>
   <header>
     <div><strong>KSPM FEBI UIN BANTEN</strong></div>
@@ -101,8 +210,8 @@
     <div class="breadcrumb">Beranda > Pasar</div>
     <div class="label">Konten dari Pengguna</div>
     <h1>PASAR MODAL</h1>
-    <div class="meta">Oleh <strong>KSPMFEBIUINBANTEN</strong> · 22 Mei 2025 12:12 WIB · waktu baca 3 menit</div>
-
+      Oleh <strong>KSPMFEBIUINBANTEN</strong> · <span id="live-date"></span> WIB · waktu baca 3 menit
+</div>
     <p>Berikut ini adalah Informasi Terkini Terkait Pasar modal.</p>
 
     <div class="social">
@@ -141,6 +250,20 @@
       console.error('Gagal mengambil data:', error);
       document.getElementById('berita-container').textContent = 'Gagal memuat data.';
     });
+    // Tanggal + Jam sekarang
+  const now = new Date();
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  const tanggal = now.toLocaleDateString('id-ID', options);
+
+  // Format jam
+  const jam = now.getHours().toString().padStart(2, '0');
+  const menit = now.getMinutes().toString().padStart(2, '0');
+
+  // Gabungkan
+  const fullDate = `${tanggal} ${jam}:${menit}`;
+
+  // Tampilkan
+  document.getElementById('live-date').textContent = fullDate;
 </script>
     
      <!-- Tambahkan di dalam <div class="container"> sebelum tag </div> terakhir -->
