@@ -12,6 +12,7 @@
   <meta property="og:url" content="https://www.kspmweb.info">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.kspmweb.info/LOGO%20BARU%20KSPM%20png%202.png">
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -34,9 +35,7 @@
       gap: 10px;
     }
     .logo-title img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      width: 40px; height: 40px; border-radius: 50%;
     }
     nav {
       display: flex;
@@ -46,40 +45,46 @@
       color: white;
       text-decoration: none;
       font-size: 14px;
+      position: relative;
+      overflow: hidden;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
     }
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -75%;
+      width: 50%; height: 100%;
+      background: rgba(255,255,255,0.3);
+      transform: skewX(-20deg);
+    }
+    nav a:hover::before {
+      animation: shine 0.8s forwards;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+
     .btn-nav {
       background: #fff;
       color: #0033a0;
       font-weight: bold;
       border-radius: 20px;
       padding: 6px 16px;
-      position: relative;
-      overflow: hidden;
-      display: inline-block;
-      transition: all 0.4s ease;
-      text-decoration: none;
       border: 2px solid #0033a0;
-    }
-    .btn-nav::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -75%;
-      width: 50%; height: 100%;
-      background: rgba(255, 255, 255, 0.3);
-      transform: skewX(-20deg);
+      text-shadow: 0 0 2px rgba(0,0,0,0.2);
     }
     .btn-nav:hover {
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      transform: scale(1.05);
-      color: #fff;
-    }
-    .btn-nav:active {
       background: #0033a0;
       color: #fff;
     }
-    .btn-nav:hover::before {
-      animation: shine 0.8s forwards;
+    .btn-nav:active {
+      background: #002060;
+      color: #fff;
     }
+
     @keyframes shine {
       from { left: -75%; }
       to { left: 200%; }
@@ -104,9 +109,7 @@
         display: none;
       }
       nav.show { display: flex; }
-      nav a {
-        margin: 8px 0;
-      }
+      nav a { margin: 8px 0; }
       .menu-toggle { display: block; }
     }
 
@@ -162,7 +165,7 @@
 <body>
   <header>
     <div class="logo-title">
-      <img src=LOGO BARU KSPM png 2.png" alt="Logo KSPM">
+      <img src="LOGO BARU KSPM png 2.png" alt="Logo KSPM">
       <strong>KSPM FEBI UIN BANTEN</strong>
     </div>
     <button class="menu-toggle">&#9776;</button>
@@ -179,7 +182,10 @@
     <div class="breadcrumb">Beranda</div>
     <div class="label">Konten dari Pengguna</div>
     <h1>Selamat Datang di KSPM FEBI UIN Banten</h1>
-    <div class="meta">Oleh <strong>KSPMFEBIUINBANTEN</strong> · 22 Mei 2025 12:12 WIB · waktu baca 3 menit</div>
+   <div class="meta">
+  Oleh <strong>KSPMFEBIUINBANTEN</strong> · <span id="live-date"></span> WIB · waktu baca 3 menit
+</div>
+
 
     <p>Berikut ini adalah Informasi Terkini.</p>
 
@@ -204,6 +210,20 @@
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
     toggle.addEventListener('click', () => nav.classList.toggle('show'));
+    // Tanggal + Jam sekarang
+  const now = new Date();
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  const tanggal = now.toLocaleDateString('id-ID', options);
+
+  // Format jam
+  const jam = now.getHours().toString().padStart(2, '0');
+  const menit = now.getMinutes().toString().padStart(2, '0');
+
+  // Gabungkan
+  const fullDate = `${tanggal} ${jam}:${menit}`;
+
+  // Tampilkan
+  document.getElementById('live-date').textContent = fullDate;
   </script>
 </body>
 </html>
