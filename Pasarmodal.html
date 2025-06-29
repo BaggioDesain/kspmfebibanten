@@ -249,6 +249,9 @@ footer {
     .catch(error => {
       console.error('Gagal mengambil data:', error);
       document.getElementById('berita-container').textContent = 'Gagal memuat data.';
+       const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('show'));
     });
     // Tanggal + Jam sekarang
   const now = new Date();
