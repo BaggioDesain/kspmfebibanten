@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>KSPM FEBI UIN BANTEN</title>
-<meta name="description" content="Website resmi Kelompok Studi Pasar Modal FEBI UIN Banten. Berisi berita, edukasi, dan aktivitas seputar pasar modal & keuangan syariah.">
-<meta name="keywords" content="KSPM, UIN Banten, pasar modal, keuangan syariah, mahasiswa, edukasi investasi">
-<meta name="author" content="KSPMFEBIUINBANTEN">
-<meta property="og:title" content="KSPM FEBI UIN BANTEN">
-<meta property="og:description" content="Temukan informasi pasar modal dan keuangan syariah terbaru dari mahasiswa FEBI UIN Banten.">
-<meta property="og:url" content="https://www.kspmweb.info">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://www.kspmweb.info/LOGO BARU KSPM png 2.png"> <!-- opsional -->
-<meta property="og:logo" content="https://www.kspmweb.info/LOGO BARU KSPM png 2.png">
-   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KSPM FEBI UIN BANTEN</title>
+  <meta name="description" content="Website resmi Kelompok Studi Pasar Modal FEBI UIN Banten. Berisi berita, edukasi, dan aktivitas seputar pasar modal & keuangan syariah.">
+  <meta name="keywords" content="KSPM, UIN Banten, pasar modal, keuangan syariah, mahasiswa, edukasi investasi">
+  <meta name="author" content="KSPMFEBIUINBANTEN">
+  <meta property="og:title" content="KSPM FEBI UIN BANTEN">
+  <meta property="og:description" content="Temukan informasi pasar modal dan keuangan syariah terbaru dari mahasiswa FEBI UIN Banten.">
+  <meta property="og:url" content="https://www.kspmweb.info">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.kspmweb.info/LOGO%20BARU%20KSPM%20png%202.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      background-color: #f9f9f9;
+      background: #f9f9f9;
     }
     header {
       background: #0033a0;
@@ -31,14 +26,90 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      position: relative;
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-title img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
     }
     nav a {
       color: white;
-      margin: 0 0.5rem;
       text-decoration: none;
       font-size: 14px;
     }
+    .btn-nav {
+      background: #fff;
+      color: #0033a0;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 6px 16px;
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      border: 2px solid #0033a0;
+    }
+    .btn-nav::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -75%;
+      width: 50%; height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: skewX(-20deg);
+    }
+    .btn-nav:hover {
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      transform: scale(1.05);
+      color: #fff;
+    }
+    .btn-nav:active {
+      background: #0033a0;
+      color: #fff;
+    }
+    .btn-nav:hover::before {
+      animation: shine 0.8s forwards;
+    }
+    @keyframes shine {
+      from { left: -75%; }
+      to { left: 200%; }
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        background: #002070;
+        position: absolute;
+        top: 70px; right: 20px;
+        border-radius: 5px;
+        padding: 1rem;
+        display: none;
+      }
+      nav.show { display: flex; }
+      nav a {
+        margin: 8px 0;
+      }
+      .menu-toggle { display: block; }
+    }
+
     .container {
       max-width: 900px;
       margin: 2rem auto;
@@ -52,13 +123,13 @@
       margin-bottom: 1rem;
     }
     .label {
-      display: inline-block;
       background: #fdd;
       color: #a00;
+      display: inline-block;
       padding: 4px 8px;
+      border-radius: 4px;
       font-size: 13px;
       margin-bottom: 0.5rem;
-      border-radius: 4px;
     }
     h1 {
       font-size: 24px;
@@ -82,59 +153,57 @@
       margin-top: 2rem;
       border-left: 4px solid #ccc;
     }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div><strong>KSPM FEBI UIN BANTEN</strong></div>
+    <div class="logo-title">
+      <img src="https://www.kspmweb.info/LOGO%20BARU%20KSPM%20png%202.png" alt="Logo KSPM">
+      <strong>KSPM FEBI UIN BANTEN</strong>
+    </div>
+    <button class="menu-toggle">&#9776;</button>
     <nav>
       <a href="#">Beranda</a>
       <a href="Pasarmodal.html">Pasar Modal</a>
       <a href="Keuangan.html">Keuangan</a>
       <a href="Histori.html">Histori</a>
-      <a href="https://www.instagram.com/kspmuinbanten?igsh=c202OGNlYTRyeWs3&utm_source=qr" style="background:white; color:#0033a0; padding:4px 8px; border-radius:5px;">Informasi Berlanjut</a>
+      <a href="https://www.instagram.com/kspmuinbanten?igsh=c202OGNlYTRyeWs3&utm_source=qr" class="btn-nav">Informasi Berlanjut</a>
     </nav>
   </header>
 
   <div class="container">
     <div class="breadcrumb">Beranda</div>
     <div class="label">Konten dari Pengguna</div>
-    <h1>Selamat Datang Di KSPM FEBI UIN Banten.</h1>
+    <h1>Selamat Datang di KSPM FEBI UIN Banten</h1>
     <div class="meta">Oleh <strong>KSPMFEBIUINBANTEN</strong> · 22 Mei 2025 12:12 WIB · waktu baca 3 menit</div>
 
     <p>Berikut ini adalah Informasi Terkini.</p>
 
-    <div class="social">
-    ❤️ 💬 🔗
-    </div>
+    <div class="social">❤️ 💬 🔗</div>
 
     <div class="disclaimer">
       Tulisan dari Berita Update tidak mewakili pandangan dari KSPMFEBIUINBANTEN.
-      <!-- Tambahkan di bawah <div class="disclaimer"> -->
-        <h2>Berita Terkini</h2>
-        <ul>
-            <li>
-            <a href="Pasarmodal.html">IHSG Menguat di Tengah Ketidakpastian Global</a>
-            <span class="date">27 Mei 2025</span>
-            </li>
-            <li>
-            <a href="Keuangan.html">Kurs Rupiah Menguat ke Level Rp16.275/USD</a>
-            <span class="date">28 Mei 2025</span>
-            </li>
-            <li>
-            <a href="Histori.html">KSPM UIN SMH Banten berhasil meraih Juara 3 dalam ajang Road to GI Award 2024 yang diselenggarakan oleh Galeri Investasi Syariah Bursa Efek Indonesia.</a>
-            <span class="date">27 Mei 2025</span>
-            </li>
-        </ul>
-    </div>
+      <h2>Berita Terkini</h2>
+      <ul>
+        <li><a href="Pasarmodal.html">IHSG Menguat di Tengah Ketidakpastian Global</a> <span class="date">27 Mei 2025</span></li>
+        <li><a href="Keuangan.html">Kurs Rupiah Menguat ke Level Rp16.275/USD</a> <span class="date">28 Mei 2025</span></li>
+        <li><a href="Histori.html">KSPM UIN SMH Banten meraih Juara 3 Road to GI Award 2024 Galeri Investasi Syariah BEI</a> <span class="date">27 Mei 2025</span></li>
+      </ul>
     </div>
   </div>
+
   <footer>
-    <div class="bottom-section" style="margin-top: 3rem; text-align: center;">
-      <p style="font-size: 15px; color: #333; max-width: 700px; margin: 0 auto;">
-      © 2025 KSPMFEBIUINBANTEN. All rights reserved.
-     </p>
-    </div>
+    <p style="font-size: 15px; color: #333; max-width: 700px; margin: 0 auto;">© 2025 KSPMFEBIUINBANTEN. All rights reserved.</p>
   </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('show'));
+  </script>
 </body>
 </html>
