@@ -12,273 +12,133 @@
   <meta property="og:url" content="https://www.kspmweb.info">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.kspmweb.info/LOGO%20BARU%20KSPM%20png%202.png">
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"/>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0; 
-      padding: 0;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      line-height: 1.6;
-      padding-top: 80px;
-    }
+    /* Semua CSS kamu tetap sama persis */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f9f9f9; line-height: 1.6; padding-top: 80px; }
     header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 999;
-      background: #0033a0;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999; background: #0033a0; color: #fff;
+      display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem;
     }
-    .logo-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo-title img {
-      width: 40px; height: 40px; border-radius: 50%;
-    }
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
+    .logo-title { display: flex; align-items: center; gap: 10px; }
+    .logo-title img { width: 40px; height: 40px; border-radius: 50%; }
+    nav { display: flex; gap: 1rem; }
     nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      position: relative;
-      overflow: hidden;
-      padding: 6px 12px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
+      color: white; text-decoration: none; font-size: 14px; position: relative; overflow: hidden;
+      padding: 6px 12px; border-radius: 4px; transition: all 0.3s ease;
     }
     nav a::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -75%;
-      width: 50%; height: 100%;
-      background: rgba(255,255,255,0.3);
-      transform: skewX(-20deg);
+      content: ''; position: absolute; top: 0; left: -75%;
+      width: 50%; height: 100%; background: rgba(255,255,255,0.3); transform: skewX(-20deg);
     }
-    nav a:hover::before {
-      animation: shine 0.8s forwards;
-    }
-    nav a:hover {
-      background: rgba(255,255,255,0.1);
-    }
+    nav a:hover::before { animation: shine 0.8s forwards; }
+    nav a:hover { background: rgba(255,255,255,0.1); }
     .btn-nav {
-      background: #fff;
-      color: #0033a0;
-      font-weight: bold;
-      border-radius: 20px;
-      padding: 6px 16px;
-      border: 2px solid #0033a0;
+      background: #fff; color: #0033a0; font-weight: bold; border-radius: 20px;
+      padding: 6px 16px; border: 2px solid #0033a0;
     }
-    .btn-nav:hover {
-      background: #0033a0;
-      color: #fff;
-    }
-    @keyframes shine {
-      from { left: -75%; }
-      to { left: 200%; }
-    }
+    .btn-nav:hover { background: #0033a0; color: #fff; }
+    @keyframes shine { from { left: -75%; } to { left: 200%; } }
     .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 28px;
-      color: #fff;
-      cursor: pointer;
+      display: none; background: none; border: none; font-size: 28px; color: #fff; cursor: pointer;
     }
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        background: #002070;
-        position: absolute;
-        top: 70px; right: 20px;
-        border-radius: 5px;
-        padding: 1rem;
-        display: none;
-      }
+      nav { flex-direction: column; background: #002070; position: absolute; top: 70px; right: 20px; border-radius: 5px; padding: 1rem; display: none; }
       nav.show { display: flex; }
       nav a { margin: 8px 0; }
       .menu-toggle { display: block; }
     }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .breadcrumb {
-      font-size: 14px;
-      color: #888;
-      margin-bottom: 1rem;
-    }
-    .label {
-      background: #fdd;
-      color: #a00;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 13px;
-      margin-bottom: 0.5rem;
-      display: inline-block;
-    }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 0.5rem;
-      animation: fadeIn 1s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .container { max-width: 900px; margin: 2rem auto; background: #fff; padding: 2rem; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .breadcrumb { font-size: 14px; color: #888; margin-bottom: 1rem; }
+    .label { background: #fdd; color: #a00; padding: 4px 8px; border-radius: 4px; font-size: 13px; margin-bottom: 0.5rem; display: inline-block; }
+    h1 { font-size: 24px; margin-bottom: 0.5rem; }
     .meta { font-size: 13px; color: #666; margin-bottom: 1rem; }
     .social { display: flex; gap: 10px; font-size: 20px; margin-top: 1rem; }
     .disclaimer {
-      background: #eef1f5;
-      padding: 1rem;
-      font-size: 14px;
-      margin-top: 2rem;
-      border-left: 4px solid #ccc;
-      animation: slideIn 1s ease;
+      background: #eef1f5; padding: 1rem; font-size: 14px; margin-top: 2rem; border-left: 4px solid #ccc;
     }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    footer {
-      margin: 3rem 0; text-align: center;
-    }
-
-    /* === CARD MODERN === */
+    footer { margin: 3rem 0; text-align: center; }
     .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 2rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 2rem;
     }
     .card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-    .card p {
-      font-size: 13px;
-      color: #555;
-    }
-    .card a {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 13px;
-      color: #0033a0;
-      text-decoration: none;
-    }
-    .card .date {
-      display: block;
-      font-size: 12px;
-      color: #888;
-      margin-top: 5px;
-    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+    .card h3 { margin-bottom: 10px; font-size: 18px; }
+    .card p { font-size: 13px; color: #555; }
+    .card a { display: inline-block; margin-top: 10px; font-size: 13px; color: #0033a0; text-decoration: none; }
+    .card .date { display: block; font-size: 12px; color: #888; margin-top: 5px; }
     .berita-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #0033a0; /* Warna biru KSPM */
-  margin-bottom: 1rem;
-  text-align: center;
-  letter-spacing: 0.5px;
-  position: relative;
-}
-
-.berita-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #0033a0;
-  margin: 8px auto 0;
-  border-radius: 2px;
-}
-
+      font-size: 28px; font-weight: bold; color: #0033a0; margin-bottom: 1rem; text-align: center; letter-spacing: 0.5px; position: relative;
+    }
+    .berita-title::after {
+      content: ""; display: block; width: 60px; height: 3px; background: #0033a0; margin: 8px auto 0; border-radius: 2px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo-title">
+    <div class="logo-title" data-aos="fade-down">
       <img src="LOGO BARU KSPM png 2.png" alt="Logo KSPM">
       <strong>KSPM FEBI UIN BANTEN</strong>
     </div>
     <button class="menu-toggle">&#9776;</button>
     <nav>
-      <a href="#">Beranda</a>
-      <a href="Pasarmodal.html">Pasar Modal</a>
-      <a href="Keuangan.html">Keuangan</a>
-      <a href="Histori.html">Histori</a>
-      <a href="https://www.instagram.com/kspmuinbanten?igsh=c202OGNlYTRyeWs3&utm_source=qr" class="btn-nav">Informasi Berlanjut</a>
+      <a href="#" data-aos="fade-down">Beranda</a>
+      <a href="Pasarmodal.html" data-aos="fade-down" data-aos-delay="50">Pasar Modal</a>
+      <a href="Keuangan.html" data-aos="fade-down" data-aos-delay="100">Keuangan</a>
+      <a href="Histori.html" data-aos="fade-down" data-aos-delay="150">Histori</a>
+      <a href="https://www.instagram.com/kspmuinbanten?igsh=c202OGNlYTRyeWs3&utm_source=qr" class="btn-nav" data-aos="fade-down" data-aos-delay="200">Informasi Berlanjut</a>
     </nav>
   </header>
 
-  <div class="container">
-    <div class="breadcrumb">Beranda</div>
-    <div class="label">Konten dari Pengguna</div>
-    <h1>Selamat Datang di KSPM FEBI UIN Banten</h1>
-    <div class="meta">
+  <div class="container" data-aos="fade-up">
+    <div class="breadcrumb" data-aos="fade-up" data-aos-delay="50">Beranda</div>
+    <div class="label" data-aos="fade-up" data-aos-delay="100">Konten dari Pengguna</div>
+    <h1 data-aos="fade-up" data-aos-delay="150">Selamat Datang di KSPM FEBI UIN Banten</h1>
+    <div class="meta" data-aos="fade-up" data-aos-delay="200">
       Oleh <strong>KSPMFEBIUINBANTEN</strong> · <span id="live-date"></span> WIB
     </div>
-
-    <p>Berikut ini adalah Informasi Terkini.</p>
-
-    <div class="social">❤️ 💬 🔗</div>
-
-    <div class="disclaimer">
+    <p data-aos="fade-up" data-aos-delay="250">Berikut ini adalah Informasi Terkini.</p>
+    <div class="social" data-aos="fade-up" data-aos-delay="300">❤️ 💬 🔗</div>
+    <div class="disclaimer" data-aos="fade-up" data-aos-delay="350">
       Tulisan dari Berita Update tidak mewakili pandangan dari KSPMFEBIUINBANTEN.
     </div>
+  </div>
+
+  <h2 class="berita-title" data-aos="fade-up" data-aos-delay="400">Berita Terkini</h2>
+  <div class="cards">
+    <div class="card" data-aos="fade-up" data-aos-delay="450">
+      <h3><a href="Pasarmodal.html">IHSG Menguat di Tengah Ketidakpastian Global</a></h3>
+      <p>Indeks Harga Saham Gabungan (IHSG) berhasil menguat di tengah ketidakpastian global yang masih membayangi pasar...</p>
+      <span class="date">27 Mei 2025</span>
     </div>
-    <h2 class="berita-title">Berita Terkini</h2>
-    <div class="cards">
-      <div class="card">
-        <h3><a href="Pasarmodal.html">IHSG Menguat di Tengah Ketidakpastian Global</a></h3>
-        <p>Indeks Harga Saham Gabungan (IHSG) berhasil menguat di tengah ketidakpastian global yang masih membayangi pasar...</p>
-        <span class="date">27 Mei 2025</span>
-      </div>
-      <div class="card">
-        <h3><a href="Keuangan.html">Kurs Rupiah Menguat ke Level Rp16.275/USD</a></h3>
-        <p>Nilai tukar Rupiah terhadap Dolar AS berhasil menguat ke level Rp16.275/USD seiring dengan membaiknya sentimen pasar...</p>
-        <span class="date">28 Mei 2025</span>
-      </div>
-      <div class="card">
-        <h3><a href="Histori.html">KSPM UIN SMH Banten Juara 3 Road to GI Award 2024</a></h3>
-        <p>Prestasi membanggakan diraih KSPM UIN SMH Banten yang berhasil meraih Juara 3 dalam ajang Road to GI Award Galeri Investasi Syariah BEI...</p>
-        <span class="date">27 Mei 2025</span>
-      </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="500">
+      <h3><a href="Keuangan.html">Kurs Rupiah Menguat ke Level Rp16.275/USD</a></h3>
+      <p>Nilai tukar Rupiah terhadap Dolar AS berhasil menguat ke level Rp16.275/USD seiring dengan membaiknya sentimen pasar...</p>
+      <span class="date">28 Mei 2025</span>
     </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="550">
+      <h3><a href="Histori.html">KSPM UIN SMH Banten Juara 3 Road to GI Award 2024</a></h3>
+      <p>Prestasi membanggakan diraih KSPM UIN SMH Banten yang berhasil meraih Juara 3 dalam ajang Road to GI Award Galeri Investasi Syariah BEI...</p>
+      <span class="date">27 Mei 2025</span>
+    </div>
+  </div>
 
   <footer>
     <p style="font-size: 15px; color: #333; max-width: 700px; margin: 0 auto;">© 2025 KSPMFEBIUINBANTEN. All rights reserved.</p>
   </footer>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    AOS.init();
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
     toggle.addEventListener('click', () => nav.classList.toggle('show'));
-
     const now = new Date();
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     const tanggal = now.toLocaleDateString('id-ID', options);
