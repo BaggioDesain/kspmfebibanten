@@ -6,23 +6,24 @@
   <title>Pasar Modal - KSPM FEBI UIN BANTEN</title>
   <meta name="description" content="Informasi pasar modal terkini dari KSPM FEBI UIN Banten.">
   <meta name="author" content="KSPMFEBIUINBANTEN">
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"/>
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      line-height: 1.7;
-      padding-top: 80px;
-      color: #333;
+      font-family: Arial, sans-serif; background: #f9f9f9;
+      line-height: 1.7; padding-top: 80px; color: #333;
     }
+
     header {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 999; background: #0033a0; color: #fff;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: #0033a0; color: #fff;
       display: flex; justify-content: space-between; align-items: center;
       padding: 1rem 2rem;
     }
     .logo-title { display: flex; align-items: center; gap: 10px; }
     .logo-title img { width: 40px; height: 40px; border-radius: 50%; }
+
     nav { display: flex; gap: 1rem; }
     nav a {
       color: #fff; text-decoration: none; font-size: 14px;
@@ -41,20 +42,32 @@
       border-radius: 20px; padding: 6px 16px; border: 2px solid #0033a0;
     }
     .btn-nav:hover { background: #0033a0; color: #fff; }
-    .menu-toggle { display: none; background: none; border: none; font-size: 28px; color: #fff; cursor: pointer; }
+
+    .menu-toggle {
+      display: none; background: none; border: none;
+      font-size: 28px; color: #fff; cursor: pointer;
+    }
+
     @media (max-width: 768px) {
-      nav { flex-direction: column; background: #002070; position: absolute; top: 70px; right: 20px; border-radius: 5px; padding: 1rem; display: none; }
+      nav { flex-direction: column; background: #002070;
+        position: absolute; top: 70px; right: 20px;
+        border-radius: 5px; padding: 1rem; display: none; }
       nav.show { display: flex; }
       nav a { margin: 8px 0; }
       .menu-toggle { display: block; }
     }
+
     @keyframes shine { from { left: -75%; } to { left: 200%; } }
+
     .container {
       max-width: 900px; margin: 2rem auto; background: #fff;
       padding: 2rem; box-shadow: 0 0 15px rgba(0,0,0,0.1);
       border-radius: 8px;
     }
-    .breadcrumb { font-size: 14px; color: #888; margin-bottom: 1rem; }
+
+    .breadcrumb {
+      font-size: 14px; color: #888; margin-bottom: 1rem;
+    }
     .label {
       background: #fdd; color: #a00; padding: 4px 8px;
       border-radius: 4px; font-size: 13px; margin-bottom: 0.5rem;
@@ -67,47 +80,51 @@
       background: #eef1f5; padding: 1rem; font-size: 14px;
       margin-top: 2rem; border-left: 4px solid #ccc;
     }
-    .news-item {
-      margin: 3rem 0;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 2rem;
-      animation: fadeUp 0.8s ease;
+
+    .section-title {
+      font-size: 24px; color: #0033a0; margin: 3rem 0 1rem;
+      border-left: 5px solid #0033a0; padding-left: 12px;
+      background-color: #ecedff;
     }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    .news-item {
+      margin: 2rem 0; border-radius: 8px;
+      background: #fdfdfd; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 1rem 1.5rem; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .news-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
     .news-item img {
       width: 100%; max-height: 400px; object-fit: cover;
       border-radius: 8px; margin: 1rem 0;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-    .news-item img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
-    .news-item h2 {
-      font-size: 20px;
-      margin-bottom: 0.5rem;
-      color: #0033a0;
-    }
-    .news-item small {
-      display: block; font-size: 13px; color: #888;
-      margin-bottom: 1rem;
-    }
-    footer { margin: 3rem 0; text-align: center; font-size: 13px; color: #888; }
-    .section-title {
-  font-size: 24px;
-  color: #0033a0;
-  margin: 3rem 0 1rem;
-  text-align: left;
-  border-left: 5px solid #0033a0;
-  padding-left: 12px;
-  background-color: #ecedff;
-}
 
+    #berita-container ul {
+      list-style: none; padding: 0;
+    }
+    #berita-container li {
+      background: #fff; margin: 1rem 0; padding: 1rem 1.5rem;
+      border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    #berita-container li:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    #berita-container li strong { font-size: 18px; color: #0033a0; }
+    #berita-container li small { color: #666; display: block; margin-bottom: 0.5rem; }
+    #berita-container li p { margin: 0.5rem 0; }
+    #berita-container li a { color: #0033a0; text-decoration: underline; }
+
+    footer {
+      margin: 3rem 0; text-align: center;
+      font-size: 13px; color: #888;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo-title">
@@ -124,28 +141,22 @@
     </nav>
   </header>
 
-  <div class="container">
-    <div class="breadcrumb">Beranda > Pasar Modal</div>
-    <div class="label">Konten dari Pengguna</div>
-    <h1>PASAR MODAL</h1>
-    <div class="meta">Oleh KSPMFEBIUINBANTEN · <span id="live-date"></span> WIB</div>
-    <p>Berikut ini adalah informasi terkini terkait Pasar Modal.</p>
-    <div class="social">❤️ 💬 🔗</div>
+  <div class="container" data-aos="fade-up" data-aos-duration="1200">
+    <div class="breadcrumb" data-aos="fade-up" data-aos-delay="100">Beranda > Pasar Modal</div>
+    <div class="label" data-aos="fade-up" data-aos-delay="200">Konten dari Pengguna</div>
+    <h1 data-aos="fade-up" data-aos-delay="300">PASAR MODAL</h1>
+    <div class="meta" data-aos="fade-up" data-aos-delay="400">Oleh KSPMFEBIUINBANTEN · <span id="live-date"></span> WIB</div>
+    <p data-aos="fade-up" data-aos-delay="500">Berikut ini adalah informasi terkini terkait Pasar Modal.</p>
+    <div class="social" data-aos="fade-up" data-aos-delay="600">❤️ 💬 🔗</div>
+    <div class="disclaimer" data-aos="fade-up" data-aos-delay="700">Tulisan dari Berita Update tidak mewakili pandangan dari KSPMFEBIUINBANTEN.</div>
 
-    <div class="disclaimer">
-      Tulisan dari Berita Update tidak mewakili pandangan dari KSPMFEBIUINBANTEN.
-    </div>
-    <h2 class="section-title">Berita Terkini</h2>
-    <!-- === BERITA === -->
-    <div class="news-item">
-      <h2>IHSG Merah! Pasar Cemas Deflasi dan Data Ekonomi</h2>
-      <small>6/2/2025</small>
-      <p>IHSG dibuka melemah signifikan pada perdagangan Senin (2/6/2025), turun 0,58% di awal sesi ke level 7.134,49. Pelemahan terus berlanjut hingga menyentuh penurunan 1,40% pada pukul 09.38 WIB ke posisi 7.075. Nilai transaksi mencapai Rp 5,25 triliun dengan kapitalisasi pasar turun ke Rp 12.306 triliun.</p>
-    </div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="800">Berita Terkini</h2>
 
-    <div class="news-item">
+    <div id="berita-container" data-aos="fade-up" data-aos-delay="900">Memuat berita...</div>
+
+    <div class="news-item" data-aos="fade-up" data-aos-delay="1100">
       <img src="pasar modal.jpeg" alt="Ilustrasi Pasar Modal">
-      <p>Indeks harga saham gabungan (IHSG) meluncur di zona hijau pada pembukaan perdagangan hari ini, Rabu (28/5/2025). Penguatan IHSG didorong oleh saham BBCA, TLKM, hingga DCII.</p>
+      <p>Indeks Harga Saham Gabungan (IHSG) dibuka menguat pada pembukaan perdagangan hari ini, Senin (30/6/2025). Indeks naik 0,56% atau 38,66 poin pada awal perdagangan ke level 6.936,06. Sebanyak 221 saham naik, 74 turun, dan 265 tidak bergerak. Kapitalisasi pasar pun menanjak jadi Rp 12.194 triliun. Nilai transaksi pada awal pembukaan perdagangan tercatat mencapai Rp 300 miliar yang melibatkan 233 juta saham dalam 22.208 kali transaksi.</p>
     </div>
   </div>
 
@@ -153,17 +164,39 @@
     <p>© 2025 KSPMFEBIUINBANTEN. All rights reserved.</p>
   </footer>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    AOS.init();
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
     toggle.addEventListener('click', () => nav.classList.toggle('show'));
-
     const now = new Date();
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     const tanggal = now.toLocaleDateString('id-ID', options);
     const jam = now.getHours().toString().padStart(2, '0');
     const menit = now.getMinutes().toString().padStart(2, '0');
     document.getElementById('live-date').textContent = `${tanggal} ${jam}:${menit}`;
+
+    fetch('https://opensheet.elk.sh/1N3PNuag8e5YcLlb151nxlqR4267jKyFpsxQUiuxBrvI/Form+Responses+1')
+      .then(res => res.json())
+      .then(data => {
+        let html = '<ul>';
+        data.forEach(item => {
+          html += `<li data-aos="fade-up">
+            <strong>${item['Judul Berita']}</strong>
+            <small>${item['Tanggal Publikasi']}</small>
+            <p>${item['Isi Ringkas Berita']}</p>
+            ${item['Link Artikel'] ? `<a href="${item['Link Artikel']}" target="_blank">Baca Selengkapnya</a>` : ''}
+          </li>`;
+        });
+        html += '</ul>';
+        document.getElementById('berita-container').innerHTML = html;
+        AOS.refresh();
+      })
+      .catch(error => {
+        console.error('Gagal mengambil data:', error);
+        document.getElementById('berita-container').textContent = 'Gagal memuat data.';
+      });
   </script>
 </body>
 </html>
