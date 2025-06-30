@@ -4,207 +4,92 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pasar Modal - KSPM FEBI UIN BANTEN</title>
-  <meta name="description" content="Berita dan informasi terkini seputar pasar modal oleh KSPM FEBI UIN Banten.">
+  <meta name="description" content="Informasi pasar modal terkini dari KSPM FEBI UIN Banten. Edukasi, berita, dan aktivitas terbaru.">
+  <meta name="keywords" content="KSPM, Pasar Modal, UIN Banten, Edukasi Investasi">
   <meta name="author" content="KSPMFEBIUINBANTEN">
   <meta property="og:title" content="Pasar Modal - KSPM FEBI UIN BANTEN">
-  <meta property="og:description" content="Temukan update pasar modal terbaru dari KSPM FEBI UIN Banten.">
+  <meta property="og:description" content="Informasi dan berita terbaru seputar pasar modal dari mahasiswa FEBI UIN Banten.">
+  <meta property="og:url" content="https://www.kspmweb.info">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.kspmweb.info/LOGO%20BARU%20KSPM%20png%202.png">
 
   <style>
-    /* === RESET === */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* === BODY === */
     body {
       font-family: Arial, sans-serif;
       background: #f9f9f9;
       line-height: 1.6;
       padding-top: 80px;
     }
-
-    /* === HEADER === */
     header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: fixed; top: 0; left: 0; right: 0;
       z-index: 999;
-      background: #0033a0;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: #0033a0; color: #fff;
+      display: flex; justify-content: space-between; align-items: center;
       padding: 1rem 2rem;
     }
-
-    .logo-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-title img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-    }
-
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
-
+    .logo-title { display: flex; align-items: center; gap: 10px; }
+    .logo-title img { width: 40px; height: 40px; border-radius: 50%; }
+    nav { display: flex; gap: 1rem; }
     nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      position: relative;
-      overflow: hidden;
-      padding: 6px 12px;
-      border-radius: 4px;
+      color: white; text-decoration: none; font-size: 14px; position: relative;
+      overflow: hidden; padding: 6px 12px; border-radius: 4px;
       transition: all 0.3s ease;
     }
-
     nav a::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -75%;
+      content: ''; position: absolute; top: 0; left: -75%;
       width: 50%; height: 100%;
       background: rgba(255,255,255,0.3);
       transform: skewX(-20deg);
     }
-
-    nav a:hover::before {
-      animation: shine 0.8s forwards;
-    }
-
-    nav a:hover {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-    }
-
+    nav a:hover::before { animation: shine 0.8s forwards; }
+    nav a:hover { background: rgba(255,255,255,0.1); }
     .btn-nav {
-      background: #fff;
-      color: #0033a0;
-      font-weight: bold;
-      border-radius: 20px;
-      padding: 6px 16px;
-      border: 2px solid #0033a0;
+      background: #fff; color: #0033a0; font-weight: bold; border-radius: 20px;
+      padding: 6px 16px; border: 2px solid #0033a0;
       text-shadow: 0 0 2px rgba(0,0,0,0.2);
     }
-
-    .btn-nav:hover {
-      background: #0033a0;
-      color: #fff;
-    }
-
-    .btn-nav:active {
-      background: #002060;
-      color: #fff;
-    }
-
-    @keyframes shine {
-      from { left: -75%; }
-      to { left: 200%; }
-    }
-
+    .btn-nav:hover { background: #0033a0; color: #fff; }
+    .btn-nav:active { background: #002060; color: #fff; }
+    @keyframes shine { from { left: -75%; } to { left: 200%; } }
     .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 28px;
-      color: #fff;
-      cursor: pointer;
+      display: none; background: none; border: none;
+      font-size: 28px; color: #fff; cursor: pointer;
     }
-
-    @media (max-width: 768px) {
+    @media(max-width: 768px) {
       nav {
-        flex-direction: column;
-        background: #002070;
-        position: absolute;
-        top: 70px; right: 20px;
-        border-radius: 5px;
-        padding: 1rem;
-        display: none;
+        flex-direction: column; background: #002070; position: absolute;
+        top: 70px; right: 20px; border-radius: 5px; padding: 1rem; display: none;
       }
-
       nav.show { display: flex; }
-
       nav a { margin: 8px 0; }
       .menu-toggle { display: block; }
     }
-
     .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
+      max-width: 900px; margin: 2rem auto;
+      background: #fff; padding: 2rem;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    .breadcrumb {
-      font-size: 14px;
-      color: #888;
-      margin-bottom: 1rem;
-    }
-
-    .label {
-      background: #fdd;
-      color: #a00;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 13px;
-      margin-bottom: 0.5rem;
-      display: inline-block;
-    }
-
     h1 {
-      font-size: 24px;
-      margin-bottom: 0.5rem;
+      font-size: 24px; margin-bottom: 0.5rem;
       animation: fadeIn 1s ease;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     .meta {
-      font-size: 13px;
-      color: #666;
-      margin-bottom: 1rem;
+      font-size: 13px; color: #666; margin-bottom: 1rem;
     }
-
-    .social {
-      display: flex;
-      gap: 10px;
-      font-size: 20px;
-      margin-top: 1rem;
-    }
-
-    .disclaimer {
-      background: #eef1f5;
-      padding: 1rem;
-      font-size: 14px;
-      margin-top: 2rem;
-      border-left: 4px solid #ccc;
-      animation: slideIn 1s ease;
-    }
-
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    footer {
-      margin: 3rem 0;
-      text-align: center;
-    }
+    footer { margin: 3rem 0; text-align: center; }
   </style>
 </head>
+
 <body>
+  <!-- === HEADER === -->
   <header>
     <div class="logo-title">
-      <img src="LOGO BARU KSPM png 2.png" alt="Logo KSPM" />
+      <img src="LOGO BARU KSPM png 2.png" alt="Logo KSPM">
       <strong>KSPM FEBI UIN BANTEN</strong>
     </div>
     <button class="menu-toggle">&#9776;</button>
@@ -213,33 +98,33 @@
       <a href="Pasarmodal.html">Pasar Modal</a>
       <a href="Keuangan.html">Keuangan</a>
       <a href="Histori.html">Histori</a>
-      <a href="https://www.instagram.com/kspmuinbanten" class="btn-nav" target="_blank">Informasi Berlanjut</a>
+      <a href="https://www.instagram.com/kspmuinbanten" target="_blank" class="btn-nav">Informasi Berlanjut</a>
     </nav>
   </header>
 
+  <!-- === KONTEN PASAR MODAL === -->
   <div class="container">
-    <div class="breadcrumb">Beranda > Pasar Modal</div>
-    <div class="label">Berita Terkini</div>
-    <h1>Update Pasar Modal</h1>
+    <h1>Pasar Modal</h1>
     <div class="meta">
-      Oleh <strong>KSPMFEBIUINBANTEN</strong> · <span id="live-date"></span> WIB · waktu baca 3 menit
+      Oleh KSPMFEBIUINBANTEN · <span id="live-date"></span> WIB
     </div>
 
-    <p>Berikut ini adalah informasi terkini seputar pasar modal untuk mahasiswa FEBI UIN Banten.</p>
+    <p>Berikut ini adalah Informasi Terkini Terkait Pasar Modal.</p>
 
-    <div class="social">❤️ 💬 🔗</div>
+    <!-- === BERITA TABEL GOOGLE SHEET === -->
+    <h2 style="margin-top: 3rem;">📰 Berita Terkini</h2>
+    <div id="berita-container">Memuat berita...</div>
 
-    <div class="disclaimer">
-      Berita ini tidak mewakili pandangan resmi KSPMFEBIUINBANTEN.
-    </div>
+    <!-- === ILUSTRASI === -->
+    <img src="pasar modal.jpeg" alt="Ilustrasi Pasar Modal"
+      style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-top: 1rem;">
   </div>
 
   <footer>
-    <p style="font-size: 15px; color: #333; max-width: 700px; margin: 0 auto;">
-      © 2025 KSPMFEBIUINBANTEN. All rights reserved.
-    </p>
+    <p>© 2025 KSPMFEBIUINBANTEN. All rights reserved.</p>
   </footer>
 
+  <!-- === SCRIPT NAV + TANGGAL + BERITA === -->
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
@@ -251,6 +136,27 @@
     const jam = now.getHours().toString().padStart(2, '0');
     const menit = now.getMinutes().toString().padStart(2, '0');
     document.getElementById('live-date').textContent = `${tanggal} ${jam}:${menit}`;
+
+    fetch('https://opensheet.elk.sh/1N3PNuag8e5YcLlb151nxlqR4267jKyFpsxQUiuxBrvI/Form+Responses+1')
+      .then(res => res.json())
+      .then(data => {
+        let html = '<ul>';
+        data.forEach(item => {
+          html += `<li>
+            <strong>${item['Judul Berita']}</strong><br>
+            <small>${item['Tanggal Publikasi']}</small><br>
+            <p>${item['Isi Ringkas Berita']}</p>
+            ${item['Link Artikel'] ? `<a href="${item['Link Artikel']}" target="_blank">Baca Selengkapnya</a>` : ''}
+            <hr>
+          </li>`;
+        });
+        html += '</ul>';
+        document.getElementById('berita-container').innerHTML = html;
+      })
+      .catch(error => {
+        console.error('Gagal mengambil data:', error);
+        document.getElementById('berita-container').textContent = 'Gagal memuat data.';
+      });
   </script>
 </body>
 </html>
