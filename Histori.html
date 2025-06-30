@@ -4,39 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Histori - KSPM FEBI UIN BANTEN</title>
-  <meta name="description" content="Histori kegiatan KSPM FEBI UIN Banten. Dokumentasi perjalanan, prestasi, dan aktivitas literasi pasar modal."/>
-  <meta name="keywords" content="KSPM, Histori, Pasar Modal, UIN Banten, Kegiatan Mahasiswa"/>
-  <meta name="author" content="KSPMFEBIUINBANTEN"/>
-  <meta property="og:title" content="Histori - KSPM FEBI UIN BANTEN"/>
-  <meta property="og:description" content="Dokumentasi perjalanan dan kegiatan KSPM FEBI UIN Banten."/>
-  <meta property="og:url" content="https://www.kspmweb.info"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:image" content="https://www.kspmweb.info/LOGO%20BARU%20KSPM%20png%202.png"/>
+  <meta name="description" content="Histori KSPM FEBI UIN Banten.">
+  <meta name="author" content="KSPMFEBIUINBANTEN">
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"/>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0; padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      line-height: 1.6;
-      padding-top: 80px;
+      font-family: Arial, sans-serif; background: #f9f9f9;
+      line-height: 1.7; padding-top: 80px; color: #333;
     }
+
     header {
-      position: fixed; top: 0; left: 0; right: 0;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
       background: #0033a0; color: #fff;
       display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 2rem; z-index: 999;
+      padding: 1rem 2rem;
     }
     .logo-title { display: flex; align-items: center; gap: 10px; }
     .logo-title img { width: 40px; height: 40px; border-radius: 50%; }
+
     nav { display: flex; gap: 1rem; }
     nav a {
       color: #fff; text-decoration: none; font-size: 14px;
-      position: relative; overflow: hidden; padding: 6px 12px; border-radius: 4px;
-      transition: all 0.3s ease;
+      padding: 6px 12px; border-radius: 4px; transition: all 0.3s ease;
+      position: relative; overflow: hidden;
     }
     nav a::before {
       content: ''; position: absolute; top: 0; left: -75%;
@@ -48,36 +40,75 @@
     .btn-nav {
       background: #fff; color: #0033a0; font-weight: bold;
       border-radius: 20px; padding: 6px 16px; border: 2px solid #0033a0;
-      text-shadow: 0 0 2px rgba(0,0,0,0.2);
     }
     .btn-nav:hover { background: #0033a0; color: #fff; }
-    .btn-nav:active { background: #002060; }
-    @keyframes shine { from{left:-75%;} to{left:200%;} }
-    .menu-toggle { display: none; background: none; border: none; font-size: 28px; color: #fff; cursor: pointer; }
-    @media (max-width: 768px) {
-      nav { flex-direction: column; background: #002070; position: absolute; top: 70px; right: 20px; border-radius: 5px; padding: 1rem; display: none; }
-      nav.show { display: flex; } nav a { margin: 8px 0; } .menu-toggle { display: block; }
+
+    .menu-toggle {
+      display: none; background: none; border: none;
+      font-size: 28px; color: #fff; cursor: pointer;
     }
 
-    .container {
-      max-width: 900px; margin: 2rem auto; background: #fff; padding: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    @media (max-width: 768px) {
+      nav { flex-direction: column; background: #002070;
+        position: absolute; top: 70px; right: 20px;
+        border-radius: 5px; padding: 1rem; display: none; }
+      nav.show { display: flex; }
+      nav a { margin: 8px 0; }
+      .menu-toggle { display: block; }
     }
+
+    @keyframes shine { from { left: -75%; } to { left: 200%; } }
+
+    .container {
+      max-width: 900px; margin: 2rem auto; background: #fff;
+      padding: 2rem; box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
     .breadcrumb { font-size: 14px; color: #888; margin-bottom: 1rem; }
-    .label { background: #fdd; color: #a00; padding: 4px 8px; border-radius: 4px; font-size: 13px; margin-bottom: 0.5rem; display: inline-block; }
-    h1 { font-size: 24px; margin-bottom: 0.5rem; animation: fadeIn 1s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    .label {
+      background: #fdd; color: #a00; padding: 4px 8px;
+      border-radius: 4px; font-size: 13px; margin-bottom: 0.5rem; display: inline-block;
+    }
+    h1 { font-size: 26px; margin-bottom: 0.5rem; }
     .meta { font-size: 13px; color: #666; margin-bottom: 1rem; }
     .social { display: flex; gap: 10px; font-size: 20px; margin-top: 1rem; }
-    .disclaimer { background: #eef1f5; padding: 1rem; font-size: 14px; margin-top: 2rem; border-left: 4px solid #ccc; animation: slideIn 1s ease; }
-    @keyframes slideIn { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
-    footer { margin: 3rem 0; text-align: center; }
+    .disclaimer {
+      background: #eef1f5; padding: 1rem; font-size: 14px;
+      margin-top: 2rem; border-left: 4px solid #ccc;
+    }
+
+    .card {
+      margin: 2rem 0; padding: 1.5rem;
+      background: #fff; border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .card img {
+      max-width: 100%; height: auto;
+      border-radius: 8px; margin-bottom: 1rem;
+    }
+    .card p {
+      font-size: 15px; color: #333; max-width: 700px;
+      margin: 0 auto; text-align: left;
+    }
+
+    footer {
+      margin: 3rem 0; text-align: center;
+      font-size: 13px; color: #888;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo-title">
-      <img src="LOGO BARU KSPM png 2.png" alt="Logo KSPM"/>
+      <img src="LOGO BARU KSPM png 2.png" alt="Logo KSPM">
       <strong>KSPM FEBI UIN BANTEN</strong>
     </div>
     <button class="menu-toggle">&#9776;</button>
@@ -90,65 +121,36 @@
     </nav>
   </header>
 
-  <div class="container">
-    <div class="breadcrumb">Beranda > Histori</div>
-    <div class="label">Konten dari Pengguna</div>
-    <h1>HISTORI</h1>
-    <div class="meta">Oleh KSPMFEBIUINBANTEN · <span id="live-date"></span> WIB</div>
+  <div class="container" data-aos="fade-up" data-aos-duration="1200">
+    <div class="breadcrumb" data-aos="fade-up" data-aos-delay="100">Beranda > Histori</div>
+    <div class="label" data-aos="fade-up" data-aos-delay="200">Konten dari Pengguna</div>
+    <h1 data-aos="fade-up" data-aos-delay="300">HISTORI</h1>
+    <div class="meta" data-aos="fade-up" data-aos-delay="400">Oleh KSPMFEBIUINBANTEN · 22 Mei 2025 12:12 WIB · waktu baca 3 menit</div>
+    <p data-aos="fade-up" data-aos-delay="500">Berikut ini adalah Informasi Terkini Terkait KSPM FEBI UIN BANTEN.</p>
+    <div class="social" data-aos="fade-up" data-aos-delay="600">❤️ 💬 🔗</div>
+    <div class="disclaimer" data-aos="fade-up" data-aos-delay="700">Tulisan dari Berita Update tidak mewakili pandangan dari KSPMFEBIUINBANTEN.</div>
 
-    <p>KSPM FEBI UIN BANTEN mendokumentasikan berbagai pencapaian, kegiatan, dan prestasi mahasiswa di bidang literasi pasar modal syariah.</p>
-
-    <div class="social">❤️ 💬 🔗</div>
-
-    <div class="disclaimer">
-      Informasi ini adalah dokumentasi kegiatan KSPM FEBI UIN BANTEN.
+    <div class="card" data-aos="fade-up" data-aos-delay="900">
+      <img src="fotokspm1.jpg" alt="Prestasi KSPM">
+      <p>Dengan penuh rasa syukur dan bangga, KSPM UIN Sultan Maulana Hasanuddin Banten berhasil meraih Juara 3 dalam ajang Road to GI Award 2024 yang diselenggarakan oleh Galeri Investasi Syariah Bursa Efek Indonesia.</p>
     </div>
 
-    <div class="bottom-section" style="margin-top: 3rem; text-align: center;">
-      <img src="LOGO BARU KSPM png 2.png" alt="Logo KSPM" style="max-width: 50%; height: auto; margin-bottom: 1rem;">
-    </div>
-    <div style="text-align:left; font-size:15px; color:#333; max-width:700px; margin:0 auto;">
-      <p>
-        KSPM FEBI UIN SMH Banten hadir sebagai wadah edukasi dan literasi pasar modal bagi mahasiswa dan masyarakat umum. 
-        Kami berkomitmen memberikan informasi yang akurat, mudah dipahami, dan relevan agar semua kalangan dapat memahami pentingnya investasi yang cerdas dan bertanggung jawab di era keuangan modern.
-      </p>
-    </div>
-    <div class="bottom-section" style="margin-top: 3rem; text-align: center;">
-      <img src="fotokspm1.jpg" alt="Dokumentasi Kegiatan" style="max-width: 50%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-bottom: 1rem;">
-    </div>
-    <div style="text-align:left; font-size:15px; color:#333; max-width:700px; margin:0 auto;">
-      <p>
-        Dengan penuh rasa syukur dan bangga, UIN Sultan Maulana Hasanuddin Banten berhasil meraih Juara 3 dalam ajang Road to GI Award 2024. 
-        Penghargaan ini menjadi bukti nyata atas dedikasi dan kerja keras seluruh tim dalam mengembangkan literasi pasar modal syariah di lingkungan akademik.
-      </p>
-    </div>
-    <div class="bottom-section" style="margin-top: 3rem; text-align: center;">
-      <img src="foto2.jpg" alt="SCMIW Kegiatan" style="max-width: 50%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-bottom: 1rem;">
-    </div>
-    <div style="text-align:left; font-size:15px; color:#333; max-width:700px; margin:0 auto;">
-      <p>
-        Pada tanggal 10 Juni 2025, KSPM FEBI UIN Banten sukses mengadakan Sharia Capital Market Investment Weekend (SCMIW) sebagai bentuk komitmen meningkatkan literasi pasar modal syariah di kalangan mahasiswa dan masyarakat umum.
-      </p>
+    <div class="card" data-aos="fade-up" data-aos-delay="1000">
+      <img src="foto2.jpg" alt="SCMIW Kegiatan">
+      <p>Pada tanggal 10 Juni 2025, KSPM FEBI UIN Banten sukses mengadakan Sharia Capital Market Investment Weekend (SCMIW) sebagai bentuk komitmen meningkatkan literasi pasar modal syariah di kalangan mahasiswa dan masyarakat umum.</p>
     </div>
   </div>
 
   <footer>
-    <p style="font-size:15px; color:#333; max-width:700px; margin:0 auto;">
-      © 2025 KSPMFEBIUINBANTEN. All rights reserved.
-    </p>
+    <p>© 2025 KSPMFEBIUINBANTEN. All rights reserved.</p>
   </footer>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    AOS.init();
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
     toggle.addEventListener('click', () => nav.classList.toggle('show'));
-
-    const now = new Date();
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    const tanggal = now.toLocaleDateString('id-ID', options);
-    const jam = now.getHours().toString().padStart(2, '0');
-    const menit = now.getMinutes().toString().padStart(2, '0');
-    document.getElementById('live-date').textContent = `${tanggal} ${jam}:${menit}`;
   </script>
 </body>
 </html>
