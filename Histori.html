@@ -127,7 +127,9 @@
     <div class="breadcrumb" data-aos="fade-up" data-aos-delay="100">Beranda > Histori</div>
     <div class="label" data-aos="fade-up" data-aos-delay="200">Konten dari Pengguna</div>
     <h1 data-aos="fade-up" data-aos-delay="300">HISTORI</h1>
-    <div class="meta" data-aos="fade-up" data-aos-delay="400">Oleh KSPMFEBIUINBANTEN · 22 Mei 2025 12:12 WIB · waktu baca 3 menit</div>
+    <div class="meta" data-aos="fade-up" data-aos-delay="200">
+      Oleh <strong>KSPMFEBIUINBANTEN</strong> · <span id="live-date"></span> WIB
+    </div>
     <p data-aos="fade-up" data-aos-delay="500">Berikut ini adalah Informasi Terkini Terkait KSPM FEBI UIN BANTEN.</p>
     <div class="social" data-aos="fade-up" data-aos-delay="600">❤️ 💬 🔗</div>
     <div class="disclaimer" data-aos="fade-up" data-aos-delay="700">Tulisan dari Berita Update tidak mewakili pandangan dari KSPMFEBIUINBANTEN.</div>
@@ -153,6 +155,12 @@
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
     toggle.addEventListener('click', () => nav.classList.toggle('show'));
+    const now = new Date();
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    const tanggal = now.toLocaleDateString('id-ID', options);
+    const jam = now.getHours().toString().padStart(2, '0');
+    const menit = now.getMinutes().toString().padStart(2, '0');
+    document.getElementById('live-date').textContent = `${tanggal} ${jam}:${menit}`;
   </script>
   <script type="application/ld+json">
 {
