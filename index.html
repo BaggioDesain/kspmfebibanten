@@ -85,6 +85,17 @@
       margin: 3rem 0; text-align: center;
       font-size: 13px; color: #888;
     }
+    .about-kspm { max-width: 900px; margin: 2rem auto; background: #fff; padding: 2rem; border-left: 4px solid #0033a0; }
+.about-kspm h2 { font-size: 24px; margin-bottom: 1rem; }
+.about-kspm h3 { font-size: 20px; margin-top: 1rem; }
+.about-kspm p, .about-kspm ul { font-size: 14px; line-height: 1.6; }
+.about-kspm ul { padding-left: 20px; }
+.login-section { max-width: 400px; margin: 3rem auto; background: #fff; padding: 2rem; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
+.login-section h2 { font-size: 20px; margin-bottom: 1rem; text-align: center; }
+.login-section input { width: 100%; padding: 8px; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+.login-section button { width: 100%; padding: 10px; background: #0033a0; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+.login-section button:hover { background: #002070; }
+
   </style>
 </head>
 <body>
@@ -110,6 +121,19 @@
     <div class="meta" data-aos="fade-up" data-aos-delay="200">
       Oleh <strong>KSPMFEBIUINBANTEN</strong> · <span id="live-date"></span> WIB
     </div>
+    <section class="about-kspm" data-aos="fade-up">
+  <h2>Tentang KSPM FEBI UIN Banten</h2>
+  <p>KSPM (Kelompok Studi Pasar Modal) FEBI UIN Banten adalah wadah pembelajaran, riset, dan edukasi mahasiswa terkait pasar modal dan keuangan syariah.</p>
+  <h3>Tugas KSPM</h3>
+  <p>1) Menjadi pusat edukasi investasi bagi civitas akademika. <br> 2) Mengadakan pelatihan, seminar, dan kajian rutin. <br> 3) Menjalin kerjasama dengan stakeholder pasar modal.</p>
+  <h3>Divisi</h3>
+  <ul>
+    <li>Pengembangan Sumber Daya Manusia</li>
+    <li>Edukasi & Literasi</li>
+    <li>Marketing & Publikasi</li>
+    <li>Pustaka Akun Data</li>
+  </ul>
+</section>
     <p data-aos="fade-up" data-aos-delay="250">Berikut ini adalah Informasi Terkini.</p>
     <div class="social" data-aos="fade-up" data-aos-delay="300">❤️ 💬 🔗</div>
     <div class="disclaimer" data-aos="fade-up" data-aos-delay="350">
@@ -135,6 +159,16 @@
       <span class="date">27 Mei 2025</span>
     </div>
   </div>
+  <section class="login-section" data-aos="fade-up">
+  <h2>Login Mahasiswa KSPM</h2>
+  <form action="login.php" method="POST">
+    <label>username:</label><br>
+    <input type="text" name="username" required><br>
+    <label>Password:</label><br>
+    <input type="password" name="password" required><br>
+    <button type="submit">Login</button>
+  </form>
+</section>
 
   <footer>
     <p>© 2025 KSPMFEBIUINBANTEN. All rights reserved.</p>
